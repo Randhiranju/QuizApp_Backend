@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.randhir.QuizApp.Entity.Questions;
 import com.randhir.QuizApp.Services.QuestionsServices;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/questions")
 // to do manipulation with questions CRUD
@@ -27,7 +29,7 @@ public class QuestionsController {
 	//write
 		@PostMapping("/addQuestions")
 		//requestBody annotation used to change JSON to object
-		public ResponseEntity<String> addQuestions(@RequestBody Questions question) {
+		public ResponseEntity<String> addQuestions(@Valid @RequestBody Questions question) {
 			 return qs.addQuestions(question);
 		}
 	
@@ -66,7 +68,7 @@ public class QuestionsController {
 		
 		//update questions
 		@PutMapping("/update/{id}")
-		public String updateQuestion(@PathVariable Integer id,@RequestBody Questions ques) {
+		public String updateQuestion(@PathVariable Integer id,@Valid @RequestBody Questions ques) {
 			return qs.updateQuestion(id, ques);
 		}
 		//delete questions 

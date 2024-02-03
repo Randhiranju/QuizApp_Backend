@@ -4,6 +4,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 @Data   //automatically gives getter and setter
@@ -15,13 +19,23 @@ public class Questions {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	
+	@Size(min=2, max=10, message="Size must be between 2 to 10")
 	private String catogery;
+	
+	@NotBlank(message="Difficulty Level field can't be empty")
+	@NotNull(message="Difficulty Level can't be null")
 	private String difficultyLevel;
+	
+	@NotBlank(message="Question title can't be empty")
+	@NotNull(message="Question title can't be null")
 	private String questionTitle;
 	private String option1;
 	private String option2;
 	private String option3;
 	private String option4;
+	
+	@Pattern(regexp="^option[1-4]{1}$",message="Select a right Option")
 	private String rightAnswer;
 	public Integer getId() {
 		return id;

@@ -1,5 +1,5 @@
 package com.randhir.QuizApp.Services;
-
+// Logic : CRUD operation on questions
 import java.util.ArrayList;
 import java.util.List;
 

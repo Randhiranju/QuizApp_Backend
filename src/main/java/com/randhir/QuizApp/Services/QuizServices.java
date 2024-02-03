@@ -18,7 +18,7 @@ import com.randhir.QuizApp.Entity.Response;
 import com.randhir.QuizApp.Exception.BadRequestException;
 import com.randhir.QuizApp.Repository.QuestionsRepo;
 import com.randhir.QuizApp.Repository.QuizRepo;
-
+// 3 services : create quiz by taking random questions, display quiz and get result
 @Service
 public class QuizServices {
 	
