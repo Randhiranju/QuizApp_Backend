@@ -16,7 +16,10 @@ Contains Basic functionalities of a quiz app like create quiz, add question , ca
 ![image](https://github.com/Randhiranju/QuizApp_Backend/assets/94231655/c4e883ab-752d-4191-84c3-8fcae753b272)
 
          Parsed
-        ![image](https://github.com/Randhiranju/QuizApp_Backend/assets/94231655/403c9b46-c0bb-41e7-bb12-db263ad96ec7)
+
+  ![image](https://github.com/Randhiranju/QuizApp_Backend/assets/94231655/dda4de18-7117-4880-9533-2967b44dfbc6)
+
+
 
         
 
