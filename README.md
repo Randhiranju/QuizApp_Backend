@@ -33,14 +33,14 @@ Contains Basic functionalities of a quiz app like create quiz, add question , ca
    
 
 5. Update Question: http://localhost:8080/questions/update/{id}
-    
-       ![image](https://github.com/Randhiranju/QuizApp_Backend/assets/94231655/4092a972-6d0f-4111-b7f4-89dd42310ed8)
 
-   
+   ![image](https://github.com/Randhiranju/QuizApp_Backend/assets/94231655/a2a6b28d-81b9-451c-b82e-34eda19b0f23)
+
+    
 
 6. Delete Question : http://localhost:8080/questions/delete/{id}
    
-       ![image](https://github.com/Randhiranju/QuizApp_Backend/assets/94231655/d3336197-67dc-4ad2-9339-93984573d175)
+      ![image](https://github.com/Randhiranju/QuizApp_Backend/assets/94231655/0762e087-56a8-4299-8326-8ffbfd7e5d91)
    
 
 7. Bean Validation and Exception Handling on Questions :
