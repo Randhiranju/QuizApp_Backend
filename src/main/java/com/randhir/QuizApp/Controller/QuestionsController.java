@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.randhir.QuizApp.Entity.Questions;
@@ -41,8 +42,11 @@ public class QuestionsController {
 		
 		//using ResponseEntity to send http code
 		@GetMapping("/getAllQuestions")
-		public ResponseEntity<List<Questions>>getAllQuestions(){
-			return qs.getAllQuestions();
+		public ResponseEntity<List<Questions>>getAllQuestions(@RequestParam(value = "pageNumber", defaultValue = "0", required = false)int pageNumber,
+				@RequestParam(value = "pageSize", defaultValue = "5", required = false)int pageSize,
+				@RequestParam(value = "sortBy", defaultValue = "questionTitle", required = false)String sortField,
+				@RequestParam(value = "sortDir", defaultValue = "asc", required = false)String sortDir){
+			return qs.getAllQuestions(pageNumber, pageSize, sortField, sortDir);
 		}
 	
 	/*get question by catogery 

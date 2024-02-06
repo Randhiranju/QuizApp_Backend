@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -12,6 +13,14 @@ import com.randhir.QuizApp.Entity.Questions;
 import com.randhir.QuizApp.Exception.BadRequestException;
 import com.randhir.QuizApp.Exception.SizeException;
 import com.randhir.QuizApp.Repository.QuestionsRepo;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.PageRequest;
+
+
 
 @Service
 public class QuestionsServices {
@@ -37,8 +46,23 @@ public class QuestionsServices {
 	}*/
 	
 	//Getting all questions along with status code
-	public ResponseEntity<List<Questions>> getAllQuestions() {
-		List<Questions> list = repo.findAll();
+	public ResponseEntity<List<Questions>> getAllQuestions(int pageNumber, int pageSize, String sortField, String sortDir) {
+		
+		Sort sort = null;
+		if(sortDir.equals("asc"))
+		{
+			sort = Sort.by(sortField).ascending();
+			
+		}
+		else 
+		{
+			sort = Sort.by(sortField).descending();
+			
+		}
+		Pageable pageable = PageRequest.of(pageNumber, pageSize, sort);
+		Page<Questions> page = repo.findAll(pageable);
+		List<Questions>list = page.getContent();
+		
 		if(list.size()==0) {
 			throw new BadRequestException("No questions are there in DB");
 		}else {
