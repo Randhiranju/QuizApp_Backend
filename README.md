@@ -50,8 +50,12 @@ Contains Basic functionalities of a quiz app like create quiz, add question , ca
    
      ![image](https://github.com/Randhiranju/QuizApp_Backend/assets/94231655/d1e8ce5e-1a9d-41c8-a6dd-7bda408bd391)
 
-   
+8. Paging and Sorting : http://localhost:8080/questions/getAllQuestions?pageNumber=1&pageSize=3&sortField=catogery&sortDir=asc
+   ![image](https://github.com/Randhiranju/QuizApp_Backend/assets/94231655/b3e98c4c-13ac-46f3-a977-a7ac59efdcb5)
+   ![image](https://github.com/Randhiranju/QuizApp_Backend/assets/94231655/585f5172-f9ba-4b2b-ab6d-1f7a266dc79b)
 
+
+   
 
                                     QUIZ OPERATIONS
    
